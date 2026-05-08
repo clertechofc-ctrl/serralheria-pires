@@ -1,0 +1,1207 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Serralheria Pires | Portões, Grades, Corrimãos e Solda</title>
+  <meta name="description" content="Serralheria Pires em São Bernardo do Campo. Portões, grades, corrimãos, estruturas metálicas, solda MIG/MAG, TIG e elétrica. Orçamento gratuito pelo WhatsApp." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#07090d;
+      --bg-2:#0c1218;
+      --panel:#121a22;
+      --panel-2:#17222b;
+      --line:rgba(255,255,255,.08);
+      --text:#f4f7f9;
+      --muted:#aab7c1;
+      --steel:#dce7ec;
+      --cyan:#31d8ff;
+      --blue:#2e87ff;
+      --orange:#ff9f2f;
+      --orange-2:#ff6d00;
+      --green:#25d366;
+      --green-2:#16983a;
+      --shadow:0 24px 70px rgba(0,0,0,.45);
+      --radius:22px;
+    }
+
+    *{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:"Inter",sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at 10% 0%, rgba(49,216,255,.08), transparent 25%),
+        radial-gradient(circle at 90% 0%, rgba(255,159,47,.08), transparent 30%),
+        linear-gradient(180deg,#06080b 0%,#0b1218 45%,#06080b 100%);
+      overflow-x:hidden;
+    }
+
+    a{text-decoration:none;color:inherit}
+    img{display:block;max-width:100%}
+    button,input,textarea,select{font-family:inherit}
+    .container{width:min(1180px,calc(100% - 24px));margin:0 auto}
+    .section{padding:76px 0}
+
+    .tag{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:10px 14px;
+      border-radius:999px;
+      background:rgba(49,216,255,.10);
+      border:1px solid rgba(49,216,255,.20);
+      color:#90eeff;
+      font-size:12px;
+      font-weight:900;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+    }
+
+    .section-top{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      text-align:center;
+      gap:12px;
+      margin-bottom:28px;
+    }
+
+    .section-title{
+      font-family:"Oswald",sans-serif;
+      font-size:clamp(34px,5vw,64px);
+      text-transform:uppercase;
+      line-height:.95;
+      letter-spacing:.03em;
+    }
+
+    .section-title span,
+    .gradient{
+      background:linear-gradient(135deg,var(--steel),var(--cyan),var(--orange));
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent;
+    }
+
+    .section-sub{
+      max-width:820px;
+      color:var(--muted);
+      font-size:15px;
+      line-height:1.8;
+    }
+
+    .btn{
+      position:relative;
+      overflow:hidden;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      min-height:52px;
+      padding:14px 24px;
+      border:none;
+      border-radius:14px;
+      cursor:pointer;
+      font-family:"Oswald",sans-serif;
+      font-size:16px;
+      font-weight:700;
+      letter-spacing:.04em;
+      text-transform:uppercase;
+      transition:.25s ease;
+      white-space:nowrap;
+    }
+
+    .btn:hover{transform:translateY(-2px)}
+    .btn::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(120deg,transparent,rgba(255,255,255,.22),transparent);
+      transform:translateX(-130%);
+      transition:.7s ease;
+    }
+    .btn:hover::before{transform:translateX(130%)}
+
+    .btn-primary{
+      background:linear-gradient(135deg,var(--orange),var(--orange-2));
+      color:white;
+      box-shadow:0 14px 30px rgba(255,109,0,.22);
+    }
+    .btn-cyan{
+      background:linear-gradient(135deg,var(--blue),var(--cyan));
+      color:white;
+      box-shadow:0 14px 30px rgba(49,216,255,.18);
+    }
+    .btn-wa{
+      background:linear-gradient(135deg,var(--green),var(--green-2));
+      color:white;
+      box-shadow:0 14px 30px rgba(37,211,102,.25);
+    }
+    .btn-outline{
+      background:rgba(255,255,255,.04);
+      color:white;
+      border:1px solid rgba(255,255,255,.12);
+    }
+
+    /* HEADER */
+    .header{
+      position:sticky;
+      top:0;
+      z-index:1000;
+      background:rgba(7,9,13,.82);
+      backdrop-filter:blur(16px);
+      border-bottom:1px solid rgba(255,255,255,.07);
+    }
+
+    .nav{
+      min-height:82px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      min-width:0;
+    }
+
+    .brand-logo{
+      width:62px;
+      height:62px;
+      border-radius:18px;
+      position:relative;
+      overflow:hidden;
+      display:grid;
+      place-items:center;
+      border:1px solid rgba(255,255,255,.12);
+      background:linear-gradient(135deg,#111820,#23323d);
+      box-shadow:var(--shadow);
+      animation:floatLogo 3.5s ease-in-out infinite;
+    }
+
+    .brand-logo::before{
+      content:"";
+      position:absolute;
+      inset:-40%;
+      background:conic-gradient(from 0deg, transparent, rgba(49,216,255,.6), transparent 35%, rgba(255,159,47,.65), transparent 70%);
+      animation:spin 7s linear infinite;
+    }
+
+    .brand-logo::after{
+      content:"";
+      position:absolute;
+      inset:4px;
+      border-radius:14px;
+      background:linear-gradient(135deg,#0c1218,#19252f);
+    }
+
+    .brand-logo span{
+      position:relative;
+      z-index:2;
+      font-family:"Oswald",sans-serif;
+      font-size:24px;
+      letter-spacing:.04em;
+      font-weight:700;
+      color:white;
+    }
+
+    .brand-text{
+      display:grid;
+      gap:4px;
+      line-height:1;
+      min-width:0;
+    }
+
+    .brand-text strong{
+      font-family:"Oswald",sans-serif;
+      font-size:24px;
+      text-transform:uppercase;
+      letter-spacing:.03em;
+    }
+
+    .brand-text small{
+      font-size:10px;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      color:var(--muted);
+      font-weight:800;
+    }
+
+    .menu-wrap{
+      display:flex;
+      align-items:center;
+      gap:14px;
+    }
+
+    .menu{
+      display:flex;
+      align-items:center;
+      gap:18px;
+    }
+
+    .menu a{
+      font-family:"Oswald",sans-serif;
+      font-size:16px;
+      font-weight:700;
+      text-transform:uppercase;
+      letter-spacing:.05em;
+      color:#dbe3e8;
+      transition:.2s;
+    }
+
+    .menu a:hover{color:var(--cyan)}
+
+    .header-cta{
+      display:flex;
+      gap:10px;
+      align-items:center;
+    }
+
+    .mobile-toggle{
+      display:none;
+      width:46px;
+      height:46px;
+      border:none;
+      border-radius:12px;
+      background:rgba(255,255,255,.06);
+      color:white;
+      font-size:22px;
+      cursor:pointer;
+    }
+
+    /* HERO */
+    .hero{
+      position:relative;
+      min-height:92vh;
+      display:flex;
+      align-items:center;
+      overflow:hidden;
+    }
+
+    .hero-bg{
+      position:absolute;
+      inset:0;
+      z-index:0;
+    }
+
+    .hero-bg img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      filter:brightness(.30) contrast(1.05) saturate(1.02);
+    }
+
+    .hero-bg::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        linear-gradient(180deg,rgba(6,8,11,.55),rgba(6,8,11,.85)),
+        radial-gradient(circle at 50% 35%, rgba(49,216,255,.10), transparent 30%),
+        radial-gradient(circle at 75% 45%, rgba(255,159,47,.12), transparent 34%);
+    }
+
+    .hero::after{
+      content:"";
+      position:absolute;
+      left:0;right:0;bottom:0;
+      height:180px;
+      background:linear-gradient(0deg,#06080b,transparent);
+      z-index:1;
+    }
+
+    .hero-content{
+      position:relative;
+      z-index:2;
+      width:min(980px,100%);
+      margin:0 auto;
+      padding:120px 0 100px;
+      text-align:center;
+      display:grid;
+      gap:18px;
+    }
+
+    .hero-badge-logo{
+      width:min(170px,42vw);
+      height:min(170px,42vw);
+      margin:0 auto 2px;
+      border-radius:28px;
+      position:relative;
+      overflow:hidden;
+      display:grid;
+      place-items:center;
+      border:1px solid rgba(255,255,255,.12);
+      background:linear-gradient(135deg,rgba(49,216,255,.14),rgba(255,159,47,.16));
+      box-shadow:var(--shadow);
+      backdrop-filter:blur(10px);
+      animation:floatHero 4s ease-in-out infinite;
+    }
+
+    .hero-badge-logo::before{
+      content:"";
+      position:absolute;
+      inset:-40%;
+      background:conic-gradient(from 0deg, transparent, rgba(49,216,255,.55), transparent 38%, rgba(255,159,47,.58), transparent 72%);
+      animation:spin 8s linear infinite;
+    }
+
+    .hero-badge-logo::after{
+      content:"";
+      position:absolute;
+      inset:6px;
+      border-radius:22px;
+      background:linear-gradient(135deg,rgba(10,16,22,.95),rgba(22,34,44,.95));
+    }
+
+    .hero-badge-logo strong{
+      position:relative;
+      z-index:2;
+      font-family:"Oswald",sans-serif;
+      font-size:clamp(40px,10vw,72px);
+      letter-spacing:.04em;
+      color:white;
+    }
+
+    .hero-badge-logo span{
+      position:absolute;
+      z-index:2;
+      bottom:20px;
+      font-size:10px;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      font-weight:800;
+      color:#b5c2ca;
+    }
+
+    .hero-title{
+      font-family:"Oswald",sans-serif;
+      text-transform:uppercase;
+      font-size:clamp(46px,9vw,116px);
+      line-height:.88;
+      letter-spacing:.03em;
+      text-shadow:0 10px 28px rgba(0,0,0,.38);
+    }
+
+    .hero-title .line-2{
+      display:block;
+      background:linear-gradient(135deg,var(--steel),var(--cyan),var(--orange));
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent;
+      text-shadow:none;
+    }
+
+    .hero-sub{
+      font-size:clamp(18px,2.2vw,28px);
+      line-height:1.45;
+      color:#d9e3e8;
+    }
+
+    .hero-sub span{color:var(--cyan)}
+
+    .hero-actions{
+      display:flex;
+      justify-content:center;
+      gap:14px;
+      flex-wrap:wrap;
+      margin-top:6px;
+    }
+
+    .hero-info{
+      display:flex;
+      justify-content:center;
+      flex-wrap:wrap;
+      gap:12px;
+      color:var(--muted);
+      font-size:13px;
+      text-transform:uppercase;
+      letter-spacing:.10em;
+      font-weight:800;
+      margin-top:4px;
+    }
+
+    .hero-info b{color:white}
+
+    /* GALLERY */
+    .gallery-section{
+      border-top:1px solid rgba(255,255,255,.06);
+      border-bottom:1px solid rgba(255,255,255,.06);
+      background:linear-gradient(180deg,#06080b 0%,#0b1218 100%);
+    }
+
+    .gallery-head{
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap:14px;
+      margin-bottom:20px;
+    }
+
+    .gallery-text{
+      display:grid;
+      gap:10px;
+    }
+
+    .gallery-text h2{
+      font-family:"Oswald",sans-serif;
+      text-transform:uppercase;
+      font-size:clamp(32px,5vw,56px);
+      line-height:.95;
+    }
+
+    .gallery-text p{
+      max-width:800px;
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.8;
+    }
+
+    .slider-controls{
+      display:flex;
+      gap:10px;
+      flex-shrink:0;
+    }
+
+    .slider-btn{
+      width:46px;
+      height:46px;
+      border:none;
+      border-radius:50%;
+      background:rgba(255,255,255,.06);
+      color:white;
+      font-size:24px;
+      cursor:pointer;
+      border:1px solid rgba(255,255,255,.08);
+      transition:.2s;
+    }
+
+    .slider-btn:hover{
+      transform:translateY(-2px);
+      background:rgba(49,216,255,.12);
+    }
+
+    .work-slider{
+      display:grid;
+      grid-auto-flow:column;
+      grid-auto-columns:calc((100% - 42px)/4);
+      gap:14px;
+      overflow-x:auto;
+      scroll-behavior:smooth;
+      scrollbar-width:none;
+      -ms-overflow-style:none;
+      padding:4px 2px 12px;
+    }
+
+    .work-slider::-webkit-scrollbar{display:none}
+
+    .work-card{
+      position:relative;
+      overflow:hidden;
+      min-height:310px;
+      border-radius:22px;
+      background:#0f161d;
+      border:1px solid rgba(255,255,255,.08);
+      box-shadow:0 12px 30px rgba(0,0,0,.28);
+    }
+
+    .work-card img{
+      width:100%;
+      height:310px;
+      object-fit:cover;
+      transition:transform .45s ease;
+    }
+
+    .work-card:hover img{transform:scale(1.05)}
+
+    .work-card::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(to top, rgba(6,8,11,.85), rgba(6,8,11,.08) 55%);
+      pointer-events:none;
+    }
+
+    .work-caption{
+      position:absolute;
+      left:14px;
+      right:14px;
+      bottom:14px;
+      z-index:2;
+      display:grid;
+      gap:4px;
+    }
+
+    .work-caption strong{
+      font-family:"Oswald",sans-serif;
+      font-size:20px;
+      text-transform:uppercase;
+      letter-spacing:.04em;
+      line-height:1;
+    }
+
+    .work-caption span{
+      font-size:12px;
+      color:#d5dee4;
+      font-weight:700;
+      line-height:1.45;
+    }
+
+    /* CARDS */
+    .grid-3{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+    }
+
+    .card{
+      background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,.02));
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:24px;
+      padding:24px;
+      box-shadow:0 14px 38px rgba(0,0,0,.20);
+      position:relative;
+      overflow:hidden;
+    }
+
+    .card::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:radial-gradient(circle at 20% 0%, rgba(49,216,255,.08), transparent 30%);
+      pointer-events:none;
+    }
+
+    .icon{
+      width:56px;
+      height:56px;
+      border-radius:16px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:linear-gradient(135deg,var(--cyan),var(--orange));
+      color:#041018;
+      font-size:24px;
+      font-weight:900;
+      margin-bottom:14px;
+    }
+
+    .card h3{
+      font-family:"Oswald",sans-serif;
+      font-size:28px;
+      text-transform:uppercase;
+      line-height:1;
+      margin-bottom:12px;
+    }
+
+    .card p{
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.8;
+      margin-bottom:16px;
+    }
+
+    .grid-2{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:18px;
+    }
+
+    .list{
+      display:grid;
+      gap:10px;
+      list-style:none;
+      margin-top:12px;
+      margin-bottom:18px;
+    }
+
+    .list li{
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+      color:#edf3f7;
+      font-size:14px;
+      line-height:1.6;
+      font-weight:600;
+    }
+
+    .list li::before{
+      content:"✦";
+      color:var(--cyan);
+      font-weight:900;
+      margin-top:1px;
+    }
+
+    /* MAP + FORM */
+    .contact-grid{
+      display:grid;
+      grid-template-columns:.95fr 1.05fr;
+      gap:18px;
+      align-items:stretch;
+    }
+
+    .map-card,.form-card{
+      background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,.02));
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:26px;
+      overflow:hidden;
+      box-shadow:var(--shadow);
+    }
+
+    .map-info,.form-box{
+      padding:24px;
+    }
+
+    .map-info h3,.form-box h3{
+      font-family:"Oswald",sans-serif;
+      font-size:34px;
+      text-transform:uppercase;
+      line-height:1;
+      margin:12px 0;
+    }
+
+    .map-info p,.form-box p{
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.8;
+    }
+
+    .map-frame{
+      width:100%;
+      height:380px;
+      border:0;
+    }
+
+    .form-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:12px;
+      margin-top:18px;
+    }
+
+    .full{grid-column:1/-1}
+
+    input, select, textarea{
+      width:100%;
+      min-height:52px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.11);
+      background:#0d151c;
+      color:white;
+      padding:0 16px;
+      font-size:14px;
+      outline:none;
+    }
+
+    textarea{
+      min-height:120px;
+      resize:vertical;
+      padding:14px 16px;
+    }
+
+    input:focus,select:focus,textarea:focus{
+      border-color:rgba(49,216,255,.45);
+      box-shadow:0 0 0 4px rgba(49,216,255,.10);
+    }
+
+    /* FOOTER */
+    .footer{
+      padding:44px 0 90px;
+    }
+
+    .footer-grid{
+      display:grid;
+      grid-template-columns:1.1fr .9fr .9fr;
+      gap:22px;
+      padding-top:24px;
+      border-top:1px solid rgba(255,255,255,.08);
+    }
+
+    .footer-box h4{
+      font-family:"Oswald",sans-serif;
+      text-transform:uppercase;
+      font-size:22px;
+      margin-bottom:10px;
+    }
+
+    .footer-box p,
+    .footer-box li,
+    .footer-box a{
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.8;
+    }
+
+    .footer-box ul{
+      list-style:none;
+      display:grid;
+      gap:6px;
+    }
+
+    .footer-bottom{
+      display:flex;
+      justify-content:space-between;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:18px;
+      padding-top:18px;
+      border-top:1px solid rgba(255,255,255,.08);
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    /* FLOAT WA */
+    .wa-float{
+      position:fixed;
+      right:16px;
+      bottom:16px;
+      z-index:1200;
+      width:64px;
+      height:64px;
+      border-radius:50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:linear-gradient(135deg,var(--green),var(--green-2));
+      color:white;
+      box-shadow:0 18px 40px rgba(37,211,102,.35);
+      animation:floatBtn 2.8s ease-in-out infinite;
+    }
+
+    .wa-float svg{width:32px;height:32px}
+
+    @keyframes spin{
+      to{transform:rotate(360deg)}
+    }
+    @keyframes floatLogo{
+      0%,100%{transform:translateY(0)}
+      50%{transform:translateY(-4px)}
+    }
+    @keyframes floatHero{
+      0%,100%{transform:translateY(0)}
+      50%{transform:translateY(-7px)}
+    }
+    @keyframes floatBtn{
+      0%,100%{transform:translateY(0)}
+      50%{transform:translateY(-5px)}
+    }
+
+    @media (max-width:1050px){
+      .menu{
+        position:absolute;
+        top:82px;
+        left:12px;
+        right:12px;
+        background:#0b1218;
+        border:1px solid rgba(255,255,255,.08);
+        border-radius:18px;
+        box-shadow:var(--shadow);
+        padding:16px;
+        display:none;
+        flex-direction:column;
+        align-items:flex-start;
+      }
+      .menu.open{display:flex}
+      .mobile-toggle{display:inline-flex;align-items:center;justify-content:center}
+      .header-cta{display:none}
+      .grid-3,.grid-2,.contact-grid,.footer-grid{grid-template-columns:1fr}
+      .work-slider{grid-auto-columns:calc((100% - 14px)/2)}
+      .map-frame{height:320px}
+    }
+
+    @media (max-width:760px){
+      .section{padding:60px 0}
+      .hero{min-height:auto}
+      .hero-content{padding:110px 0 82px}
+      .hero-title{font-size:44px}
+      .hero-sub{font-size:18px}
+      .work-slider{grid-auto-columns:84%}
+      .work-card img,.work-card{height:290px;min-height:290px}
+      .form-grid{grid-template-columns:1fr}
+      .brand-text strong{font-size:19px}
+      .brand-text small{font-size:9px}
+      .brand-logo{width:56px;height:56px}
+      .brand-logo span{font-size:21px}
+    }
+
+    @media (max-width:520px){
+      .hero-badge-logo{width:138px;height:138px}
+      .hero-badge-logo strong{font-size:52px}
+      .hero-title{font-size:38px}
+      .hero-actions .btn{width:100%}
+      .footer-bottom{display:grid}
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <div class="container nav">
+      <a href="#inicio" class="brand">
+        <div class="brand-logo"><span>SP</span></div>
+        <div class="brand-text">
+          <strong>Serralheria Pires</strong>
+          <small>Rafael Pires Costa</small>
+        </div>
+      </a>
+
+      <div class="menu-wrap">
+        <nav class="menu" id="menu">
+          <a href="#inicio">Início</a>
+          <a href="#galeria">Galeria</a>
+          <a href="#servicos">Serviços</a>
+          <a href="#sobre">Sobre</a>
+          <a href="#mapa">Endereço</a>
+          <a href="#contato">Contato</a>
+        </nav>
+
+        <div class="header-cta">
+          <button class="btn btn-wa" onclick="abrirWhatsApp('Botão do topo', 'Quero falar sobre um serviço de serralheria.')">WhatsApp</button>
+          <a class="btn btn-primary" href="#contato">Agendar</a>
+        </div>
+
+        <button class="mobile-toggle" onclick="toggleMenu()">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="inicio">
+
+    <section class="hero">
+      <div class="hero-bg">
+        <img src="assets/hero.jpg" alt="Serviço de serralheria">
+      </div>
+
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-badge-logo">
+            <strong>SP</strong>
+            <span>Serralheria</span>
+          </div>
+
+          <h1 class="hero-title">
+            Serralheria Pires
+            <span class="line-2">Portões, Grades & Solda</span>
+          </h1>
+
+          <p class="hero-sub">
+            Soluções em <span>portões, corrimãos, estruturas metálicas, solda MIG/MAG, TIG e elétrica</span> com atendimento rápido e orçamento gratuito.
+          </p>
+
+          <div class="hero-actions">
+            <button class="btn btn-wa" onclick="abrirWhatsApp('Hero WhatsApp', 'Quero solicitar um orçamento gratuito.')">Chamar no WhatsApp</button>
+            <a class="btn btn-outline" href="#galeria">Ver Trabalhos</a>
+            <a class="btn btn-primary" href="#contato">Agendar Serviço</a>
+          </div>
+
+          <div class="hero-info">
+            <span><b>São Bernardo do Campo</b></span>
+            <span>•</span>
+            <span>Portões • Grades • Corrimãos • Solda</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section gallery-section" id="galeria">
+      <div class="container">
+        <div class="gallery-head">
+          <div class="gallery-text">
+            <span class="tag">Galeria premium</span>
+            <h2>Trabalhos <span class="gradient">realizados</span></h2>
+            <p>
+              Aqui entram as 15 fotos dos serviços feitos. O carrossel passa para o lado automaticamente,
+              um pouco mais rápido, e também pode ser controlado pelas setas.
+            </p>
+          </div>
+
+          <div class="slider-controls">
+            <button class="slider-btn" onclick="moveSlider(-1)">‹</button>
+            <button class="slider-btn" onclick="moveSlider(1)">›</button>
+          </div>
+        </div>
+
+        <div class="work-slider" id="workSlider">
+          <article class="work-card"><img src="assets/foto-1.jpg" alt="Trabalho 1"><div class="work-caption"><strong>Portões</strong><span>Instalação, reforma e acabamento.</span></div></article>
+          <article class="work-card"><img src="assets/foto-2.jpg" alt="Trabalho 2"><div class="work-caption"><strong>Grades</strong><span>Proteção, reforço e visual renovado.</span></div></article>
+          <article class="work-card"><img src="assets/foto-3.jpg" alt="Trabalho 3"><div class="work-caption"><strong>Corrimãos</strong><span>Segurança com acabamento profissional.</span></div></article>
+          <article class="work-card"><img src="assets/foto-4.jpg" alt="Trabalho 4"><div class="work-caption"><strong>Solda</strong><span>MIG/MAG, TIG e elétrica.</span></div></article>
+          <article class="work-card"><img src="assets/foto-5.jpg" alt="Trabalho 5"><div class="work-caption"><strong>Estruturas</strong><span>Montagem de estruturas metálicas.</span></div></article>
+          <article class="work-card"><img src="assets/foto-6.jpg" alt="Trabalho 6"><div class="work-caption"><strong>Reformas</strong><span>Serviços sob medida em serralheria.</span></div></article>
+          <article class="work-card"><img src="assets/foto-7.jpg" alt="Trabalho 7"><div class="work-caption"><strong>Portão Elétrico</strong><span>Serviços e manutenção.</span></div></article>
+          <article class="work-card"><img src="assets/foto-8.jpg" alt="Trabalho 8"><div class="work-caption"><strong>Acabamentos</strong><span>Visual limpo e profissional.</span></div></article>
+          <article class="work-card"><img src="assets/foto-9.jpg" alt="Trabalho 9"><div class="work-caption"><strong>Projetos</strong><span>Atendimento residencial e comercial.</span></div></article>
+          <article class="work-card"><img src="assets/foto-10.jpg" alt="Trabalho 10"><div class="work-caption"><strong>Metalúrgica</strong><span>Soluções fortes e duráveis.</span></div></article>
+          <article class="work-card"><img src="assets/foto-11.jpg" alt="Trabalho 11"><div class="work-caption"><strong>Reparos</strong><span>Ajustes e correções em metal.</span></div></article>
+          <article class="work-card"><img src="assets/foto-12.jpg" alt="Trabalho 12"><div class="work-caption"><strong>Montagens</strong><span>Execução com precisão.</span></div></article>
+          <article class="work-card"><img src="assets/foto-13.jpg" alt="Trabalho 13"><div class="work-caption"><strong>Fabricação</strong><span>Peças e serviços personalizados.</span></div></article>
+          <article class="work-card"><img src="assets/foto-14.jpg" alt="Trabalho 14"><div class="work-caption"><strong>Residencial</strong><span>Portões, grades e proteção.</span></div></article>
+          <article class="work-card"><img src="assets/foto-15.jpg" alt="Trabalho 15"><div class="work-caption"><strong>Comercial</strong><span>Serviços para empresas e comércios.</span></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="servicos">
+      <div class="container">
+        <div class="section-top">
+          <span class="tag">Serviços</span>
+          <h2 class="section-title">O que a <span>Serralheria Pires</span> faz</h2>
+          <p class="section-sub">
+            Atendimento com foco em qualidade, acabamento e agilidade para quem precisa de serviços de serralheria em São Bernardo do Campo e região.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <div class="card">
+            <div class="icon">🚪</div>
+            <h3>Portões e Grades</h3>
+            <p>Portão novo, portão elétrico, reforma de grades e fabricação sob medida para residências e comércios.</p>
+            <button class="btn btn-outline" onclick="abrirWhatsApp('Serviço - Portões e Grades', 'Tenho interesse em portão novo, portão elétrico ou reforma de grades.')">Quero esse serviço</button>
+          </div>
+
+          <div class="card">
+            <div class="icon">🛠</div>
+            <h3>Corrimãos e Estruturas</h3>
+            <p>Corrimãos, estruturas metálicas, reforços e montagens com acabamento profissional e durabilidade.</p>
+            <button class="btn btn-outline" onclick="abrirWhatsApp('Serviço - Corrimãos e Estruturas', 'Tenho interesse em corrimão ou estrutura metálica.')">Quero esse serviço</button>
+          </div>
+
+          <div class="card">
+            <div class="icon">🔥</div>
+            <h3>Solda Especializada</h3>
+            <p>Solda MIG portátil com gás, MIG-MAG, TIG e solda elétrica para diversos tipos de serviço.</p>
+            <button class="btn btn-outline" onclick="abrirWhatsApp('Serviço - Solda', 'Tenho interesse em um serviço de solda.')">Quero esse serviço</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="sobre">
+      <div class="container">
+        <div class="grid-2">
+          <div class="card">
+            <span class="tag">Sobre</span>
+            <h3 style="margin-top:12px;">Rafael Pires Costa</h3>
+            <p>
+              Serralheiro com atendimento em São Bernardo do Campo, oferecendo soluções em portões, grades, corrimãos,
+              pintura, estruturas metálicas e serviços de solda. Trabalha com foco em praticidade, resistência e bom acabamento.
+            </p>
+
+            <ul class="list">
+              <li>Máquina de solda MIG portátil com gás</li>
+              <li>Solda MIG-MAG, TIG e elétrica</li>
+              <li>Portões, grades, corrimãos e estruturas</li>
+              <li>Serviços residenciais, comerciais e reformas</li>
+              <li>Orçamento gratuito e atendimento rápido</li>
+            </ul>
+
+            <button class="btn btn-cyan" onclick="abrirWhatsApp('Sobre - Rafael Pires Costa', 'Quero saber mais sobre os serviços da Serralheria Pires.')">Falar com a empresa</button>
+          </div>
+
+          <div class="card">
+            <span class="tag">Diferenciais</span>
+            <h3 style="margin-top:12px;">Por que escolher</h3>
+            <p>
+              Uma proposta premium para valorizar mais o serviço e transmitir mais confiança ao cliente.
+            </p>
+
+            <ul class="list">
+              <li>Visual profissional e premium para converter mais</li>
+              <li>Atendimento direto no WhatsApp</li>
+              <li>Galeria automática com prova real dos serviços</li>
+              <li>Mapa com localização da empresa</li>
+              <li>Botão de agendamento e formulário com mensagem pronta</li>
+            </ul>
+
+            <button class="btn btn-primary" onclick="abrirWhatsApp('Diferenciais', 'Quero solicitar um orçamento agora.')">Pedir orçamento</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="mapa">
+      <div class="container contact-grid">
+        <div class="map-card">
+          <div class="map-info">
+            <span class="tag">Endereço</span>
+            <h3>Veja no <span class="gradient">mapa</span></h3>
+            <p>
+              Rua Efraim Ramos da Silva, 24 - Bairro Botujuru<br>
+              São Bernardo do Campo - SP<br>
+              CEP 09821-060
+            </p>
+          </div>
+
+          <iframe
+            class="map-frame"
+            loading="lazy"
+            allowfullscreen
+            referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps?q=Rua%20Efraim%20Ramos%20da%20Silva%2024%20Botujuru%20S%C3%A3o%20Bernardo%20do%20Campo%20SP%2009821-060&output=embed">
+          </iframe>
+        </div>
+
+        <div class="form-card" id="contato">
+          <div class="form-box">
+            <span class="tag">Contato rápido</span>
+            <h3>Agende ou peça <span class="gradient">orçamento</span></h3>
+            <p>
+              Preencha e o WhatsApp abrirá com a mensagem pronta para a Serralheria Pires.
+            </p>
+
+            <form class="form-grid" onsubmit="enviarFormulario(event)">
+              <input type="text" name="nome" placeholder="Seu nome" required>
+              <input type="tel" name="telefone" placeholder="Seu WhatsApp" required>
+
+              <select name="servico" required>
+                <option value="">Tipo de serviço</option>
+                <option>Portão novo</option>
+                <option>Portão elétrico</option>
+                <option>Reforma de grades</option>
+                <option>Corrimão</option>
+                <option>Estrutura metálica</option>
+                <option>Solda</option>
+                <option>Pintura</option>
+                <option>Outro</option>
+              </select>
+
+              <input type="text" name="bairro" placeholder="Bairro / Cidade">
+
+              <textarea class="full" name="mensagem" placeholder="Descreva o serviço que você precisa..."></textarea>
+
+              <button class="btn btn-wa full" type="submit">Enviar para WhatsApp</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-box">
+            <h4>Serralheria Pires</h4>
+            <p>
+              Serviços em serralheria com foco em qualidade, acabamento e atendimento rápido.
+              Portões, grades, corrimãos, estruturas metálicas e solda em São Bernardo do Campo.
+            </p>
+          </div>
+
+          <div class="footer-box">
+            <h4>Menu</h4>
+            <ul>
+              <li><a href="#inicio">Início</a></li>
+              <li><a href="#galeria">Galeria</a></li>
+              <li><a href="#servicos">Serviços</a></li>
+              <li><a href="#sobre">Sobre</a></li>
+              <li><a href="#mapa">Endereço</a></li>
+              <li><a href="#contato">Contato</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-box">
+            <h4>Contato</h4>
+            <ul>
+              <li>WhatsApp: (11) 94730-8154</li>
+              <li>Telefone: (11) 4396-7379</li>
+              <li>Rua Efraim Ramos da Silva, 24</li>
+              <li>Botujuru - São Bernardo do Campo - SP</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>© 2026 Serralheria Pires - Todos os direitos reservados</p>
+          <p>Site criado para captação de clientes e orçamentos</p>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <a class="wa-float" href="#" onclick="abrirWhatsApp('Botão flutuante', 'Quero solicitar um orçamento.')" aria-label="WhatsApp">
+    <svg viewBox="0 0 32 32" fill="currentColor">
+      <path d="M16.02 3.2A12.68 12.68 0 0 0 5.09 22.3L3.2 28.8l6.68-1.76a12.62 12.62 0 0 0 6.12 1.56h.01A12.7 12.7 0 0 0 16.02 3.2Zm7.47 17.94c-.31.88-1.56 1.62-2.22 1.73-.57.09-1.3.13-2.1-.13-.48-.15-1.1-.35-1.89-.69-3.33-1.44-5.5-4.8-5.67-5.02-.17-.22-1.35-1.8-1.35-3.43 0-1.63.86-2.44 1.16-2.77.3-.33.66-.41.88-.41h.63c.2.01.48-.08.75.57.29.7.98 2.4 1.07 2.57.09.17.15.37.03.59-.11.22-.17.36-.34.56-.17.2-.36.45-.51.61-.17.17-.35.36-.15.71.2.35.88 1.45 1.89 2.35 1.3 1.16 2.39 1.52 2.74 1.69.35.17.55.14.75-.09.2-.23.86-1 1.09-1.35.23-.35.46-.29.78-.17.32.12 2.03.96 2.38 1.13.35.17.58.26.67.4.09.14.09.81-.22 1.69Z"/>
+    </svg>
+  </a>
+
+  <script>
+    const WHATSAPP = "5511947308154";
+
+    function toggleMenu(){
+      document.getElementById("menu").classList.toggle("open");
+    }
+
+    document.querySelectorAll(".menu a").forEach(link=>{
+      link.addEventListener("click",()=>{
+        document.getElementById("menu").classList.remove("open");
+      });
+    });
+
+    function abrirWhatsApp(botao, interesse){
+      const texto =
+`Olá, vim pelo site da Serralheria Pires.
+
+Botão clicado: ${botao}
+Interesse: ${interesse}`;
+      window.open(`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(texto)}`, "_blank");
+    }
+
+    function enviarFormulario(event){
+      event.preventDefault();
+      const form = event.target;
+      const nome = form.nome.value.trim();
+      const telefone = form.telefone.value.trim();
+      const servico = form.servico.value.trim();
+      const bairro = form.bairro.value.trim();
+      const mensagem = form.mensagem.value.trim();
+
+      const texto =
+`Olá, vim pelo site da Serralheria Pires e quero um orçamento.
+
+Nome: ${nome}
+WhatsApp: ${telefone}
+Serviço: ${servico}
+Bairro/Cidade: ${bairro}
+Mensagem: ${mensagem}`;
+
+      window.open(`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(texto)}`, "_blank");
+    }
+
+    const slider = document.getElementById("workSlider");
+    let autoSlide;
+
+    function moveSlider(direction){
+      const amount = Math.min(slider.clientWidth * 0.85, 420);
+      slider.scrollBy({ left: amount * direction, behavior: "smooth" });
+    }
+
+    function startAutoSlide(){
+      stopAutoSlide();
+      autoSlide = setInterval(()=>{
+        slider.scrollLeft += 2.2;
+        if(slider.scrollLeft + slider.clientWidth >= slider.scrollWidth - 3){
+          slider.scrollLeft = 0;
+        }
+      }, 16);
+    }
+
+    function stopAutoSlide(){
+      clearInterval(autoSlide);
+    }
+
+    startAutoSlide();
+
+    slider.addEventListener("mouseenter", stopAutoSlide);
+    slider.addEventListener("mouseleave", startAutoSlide);
+    slider.addEventListener("touchstart", stopAutoSlide, { passive:true });
+    slider.addEventListener("touchend", startAutoSlide);
+  </script>
+</body>
+</html>
